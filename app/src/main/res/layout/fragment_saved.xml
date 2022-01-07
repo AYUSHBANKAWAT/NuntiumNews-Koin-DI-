@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    tools:viewBindingIgnore="false"
+    android:layout_height="match_parent"
+    tools:context=".Fragment.SavedFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sources"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:fontFamily="@font/roboto_mono_bold"
+        android:textStyle="bold"
+        android:layout_margin="10dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_marginStart="10dp"
+        android:textColor="#7c82a1"
+        android:text="Check out the brief decription of our legit sources"/>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_height="match_parent">
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/source_file"
+        tools:itemCount="10"
+        android:id="@+id/saved_recycler_view"
+        android:layout_margin="5dp"/>
+    </FrameLayout>
+</LinearLayout>

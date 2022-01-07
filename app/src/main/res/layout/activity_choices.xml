@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    tools:viewBindingIgnore="false"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:layout_height="match_parent"
+    tools:context=".ChoicesActivity">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textColor="#333647"
+        android:layout_marginTop="0dp"
+        android:fontFamily="@font/roboto_mono_bold"
+        android:text="Select your favourite topics"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:textSize="14sp"
+        android:textColor="#7c82a1"
+        android:textAlignment="center"
+        android:layout_margin="8dp"
+        android:fontFamily="@font/roboto_mono_bold"
+        android:lines="2"
+        android:justificationMode="inter_word"
+        android:text="Select some of your favourite topics to let us suggest better news for you"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:id="@+id/staggered_recyclerView"/>
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Next"
+        android:id="@+id/next_btn_choices"
+        android:textAllCaps="false"
+        android:layout_margin="8dp"
+        app:cornerRadius="12dp"
+        android:backgroundTint="@color/primary_purple"/>
+
+</LinearLayout>

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "208460918090",
+    "project_id": "sapient-helix-318709",
+    "storage_bucket": "sapient-helix-318709.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:208460918090:android:ce40ee57283a07043a65b3",
+        "android_client_info": {
+          "package_name": "com.application.nuntium"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "208460918090-72lnjpjhsim1sujq2tbu1bf1f6k86vum.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.application.nuntium",
+            "certificate_hash": "1b7ae868f4448e17577c4dc7dc31aaa72913fee8"
+          }
+        },
+        {
+          "client_id": "208460918090-9pi46qcpfc5o396jsesiav6rfj56rh3u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD60NHwpEBe4onMWY17L8oqZJwDe-cVC_Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "208460918090-9pi46qcpfc5o396jsesiav6rfj56rh3u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

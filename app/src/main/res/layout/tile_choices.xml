@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="170dp"
+    android:id="@+id/card"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:backgroundTint="#f3f4f6"
+    app:cardCornerRadius="12dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginStart="1dp"
+    android:layout_marginEnd="1dp"
+    android:layout_height="wrap_content">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:padding="10dp"
+    android:id="@+id/linearLayout"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:orientation="horizontal"
+    >
+    <ImageView
+        android:layout_width="59dp"
+        android:layout_height="30dp"
+        android:id="@+id/imgChoices"
+        android:src="@drawable/americanfootball"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:text="Sports"
+        android:id="@+id/tile_name"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/roboto_mono_bold"/>
+
+        
+</LinearLayout>
+</com.google.android.material.card.MaterialCardView>
