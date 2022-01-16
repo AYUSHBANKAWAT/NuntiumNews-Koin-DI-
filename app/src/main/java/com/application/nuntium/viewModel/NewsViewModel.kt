@@ -185,7 +185,7 @@ class NewsViewModel(private val newsRepository:NewsRepository):ViewModel() {
 
     fun getSearchData(q:String,lang:String){
        // loadingStateSearch.value = LoadingState.LOADING
-        viewModelScope.launch{
+        runBlocking {
             try {
                 loadingStateSearch.value = LoadingState.LOADING
                 val data = newsRepository.getSearch(q,lang,"10")

@@ -59,7 +59,7 @@ class RandomHomeFragment : Fragment() {
                                 sharingIntent.type = "text/plain"
                                 sharingIntent.putExtra(Intent.EXTRA_TEXT,data.url);
                                 sharingIntent.putExtra(Intent.EXTRA_SUBJECT, data.title);
-                                startActivity(Intent.createChooser(sharingIntent, "Share via"));
+                                startActivity(Intent.createChooser(sharingIntent, "Share via"))
                             })
                             layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
                         }

@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +13,7 @@ import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.application.nuntium.R
+import com.application.nuntium.WebActivity
 import com.application.nuntium.model.SourcesItem
 import com.application.nuntium.model.TopHeadlines
 import com.application.nuntium.model.articles
@@ -42,7 +44,7 @@ class HomeChoiceAdapter<T>(var context: Context, private var list:ArrayList<T>, 
                  Picasso.get().load(data.urlToImage).into(img)
                   imgBookMark.setOnClickListener {
                       onItemClicked(list[position] as articles)
-                      Toast.makeText(context,"$position",Toast.LENGTH_LONG).show()
+                     // Toast.makeText(context,"$position",Toast.LENGTH_LONG).show()
                   }
               }
               if(code==3){
@@ -57,13 +59,26 @@ class HomeChoiceAdapter<T>(var context: Context, private var list:ArrayList<T>, 
               if(code==5){
                   val headline = itemView.findViewById<TextView>(R.id.headlines)
                   val date = itemView.findViewById<TextView>(R.id.date)
+                  val card = itemView.findViewById<MaterialCardView>(R.id.card)
                   val body = itemView.findViewById<TextView>(R.id.body)
                   val img = itemView.findViewById<ShapeableImageView>(R.id.img)
+                  val share = itemView.findViewById<ImageView>(R.id.share)
                   val data = list[position] as articles
                   headline.text = data.title
                   date.text =data.publishedAt
                   body.text =data.content
                   Picasso.get().load(data.urlToImage).error(R.drawable.error).into(img)
+                  share.setOnClickListener {
+                      onItemClicked(data)
+                  }
+                  card.setOnClickListener {
+                      val data = list[position] as articles
+                      Log.i("web_url",data.url)
+                      val intent = Intent(context,WebActivity::class.java)
+                      intent.putExtra("web_url",data.url)
+                      context.startActivity(intent)
+                  }
+
               }
               if(code==6){
                   val title = itemView.findViewById<TextView>(R.id.title)
@@ -79,7 +94,7 @@ class HomeChoiceAdapter<T>(var context: Context, private var list:ArrayList<T>, 
                   category.text=data.category
                   description.text=data.description
                   web.setOnClickListener {
-                      onItemClicked(data)
+                      onItemClicked(list[position] as articles)
                   }
               }
 

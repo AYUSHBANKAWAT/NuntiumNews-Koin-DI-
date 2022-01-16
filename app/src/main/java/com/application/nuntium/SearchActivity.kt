@@ -17,6 +17,7 @@ import com.application.nuntium.viewModel.NewsViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SearchActivity : AppCompatActivity() {
@@ -29,10 +30,11 @@ class SearchActivity : AppCompatActivity() {
         binding.itemSearchInput.setOnQueryTextListener(object :
             androidx.appcompat.widget.SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                GlobalScope.launch(Dispatchers.IO) {
+                runBlocking {
                     val data = query.toString()?:"New Delhi"
                     newsViewModel.getSearchData(data,"en")
                 }
+                binding.recyclerView.adapter?.notifyDataSetChanged()!!
                 return false
             }
 
